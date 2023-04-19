@@ -21,7 +21,7 @@ class PersonalRegistrado(models.Model):
         db_table = 'PersonalRegistrado'
 
 class LiveData(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.BigAutoField(primary_key=True)
     ubicacion = models.CharField( max_length=50, null=True)
     cardidHex = models.CharField(max_length=8, null=False)
     nombre = models.CharField(max_length=50, null=True)
