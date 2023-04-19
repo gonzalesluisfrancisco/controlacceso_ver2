@@ -187,11 +187,11 @@ def livedata_agregar(request):
 @login_required(login_url = 'autenticacion')
 def livedata_eliminar(request):
     if request.method == 'POST':
-        print(request.POST.get('id'))
+        print(request.POST.get('cardidHex'))
         #agregar datos
-        if request.POST.get('id'):
-            id_a_borrar = request.POST.get('id')
-            tupla = models.LiveData.objects.get(id=id_a_borrar)
+        if request.POST.get('cardidHex'):
+            cardidHex_a_borrar = request.POST.get('cardidHex')
+            tupla = models.LiveData.objects.get(cardidHex=cardidHex_a_borrar)
             tupla.delete()
             return redirect('livedata')
         datos = { 'r2' : "Debe ingresar todos los campos correctamente"}
