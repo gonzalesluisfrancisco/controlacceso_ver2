@@ -318,6 +318,7 @@ def actualizarLiveDataNoRegistrado(reg):
         f_evento = rfecha_evento
         h_evento = rhora_evento
         fecha_datetime = datetime.strptime(f_evento+' '+h_evento,'%Y-%m-%d %H:%M:%S')
+        print(fecha_datetime)
         zona_horaria = pytz.timezone('America/Lima')
         fecha_y_hora_con_zona_horaria = zona_horaria.localize(fecha_datetime)
         nuevoLiveData.f_ingreso = fecha_y_hora_con_zona_horaria.date()
